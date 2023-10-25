@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:54:13 by vflorez           #+#    #+#             */
-/*   Updated: 2023/10/20 17:40:37 by vradis           ###   ########.fr       */
+/*   Updated: 2023/10/25 17:02:52 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    ft_signal_handler(int signal)
 {
-    static int  bit;
+    static  int  bit;
     static int  i;
 
     //i = 0;
@@ -25,8 +25,8 @@ void    ft_signal_handler(int signal)
     bit++;
     if(bit == 8)
     {
-        printf("The result is : %c\n", i);
-        bit = 0;
+        printf("%c", i);
+		bit = 0;
         i = 0;
     }
 }
@@ -39,15 +39,17 @@ int main(int argc, char* argv[])
     if(argc != 1)
     {
         printf("Wrong format, try again:");
+
         return 0;
     }
     pid = getpid();
     printf("Process ID (PID) : %d\n", pid);
     printf("Waiting for your awesome message..\n");
+    
+    signal(SIGUSR1, ft_signal_handler);
+    signal(SIGUSR2, ft_signal_handler);
     while(argc == 1)
     {
-        signal(SIGUSR1, ft_signal_handler);
-        signal(SIGUSR2, ft_signal_handler);
         pause();
     }
     return(0);

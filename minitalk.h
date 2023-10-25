@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:27:28 by vflorez           #+#    #+#             */
-/*   Updated: 2023/10/20 17:29:51 by vradis           ###   ########.fr       */
+/*   Updated: 2023/10/23 16:47:18 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <signal.h>
-//# include "../Printf/ft_printf.h"
+# include "../Printf/ft_printf.h"
 # include <stdio.h>
 
 
