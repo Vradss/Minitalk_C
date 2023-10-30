@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:53:31 by vflorez           #+#    #+#             */
-/*   Updated: 2023/10/30 16:17:45 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/10/30 19:11:19 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char *argv[])
 	i = 0;
 	if (argc == 3)
 	{
-		pid = atoi(argv[1]);
+		pid = ft_atoi(argv[1]);
 		while (argv[2][i] != '\0')
 		{
 			get_bits(pid, argv[2][i]);
