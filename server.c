@@ -6,51 +6,46 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:54:13 by vflorez           #+#    #+#             */
-/*   Updated: 2023/10/25 17:02:52 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/10/30 16:26:50 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void    ft_signal_handler(int signal)
+void	ft_signal_handler(int signal)
 {
-    static  int  bit;
-    static int  i;
+	static int		bit;
+	static int		i;
 
-    //i = 0;
-    
-    //construimos 1 byte(8bits) de informacion binaria
-    if(signal == SIGUSR1)
-        i |= (0x01 << bit);
-    bit++;
-    if(bit == 8)
-    {
-        printf("%c", i);
+	if (signal == SIGUSR1)
+		i |= (0x01 << bit);
+	bit++;
+	if (bit == 8)
+	{
+		printf("%c", i);
 		bit = 0;
-        i = 0;
-    }
+		i = 0;
+	}
 }
 
-int main(int argc, char* argv[])
+int	main(int argc, char *argv[])
 {
-    int pid;
-    
-    (void)argv; //lo declaramos ya que no utilizamos vars
-    if(argc != 1)
-    {
-        printf("Wrong format, try again:");
+	int	pid;
 
-        return 0;
-    }
-    pid = getpid();
-    printf("Process ID (PID) : %d\n", pid);
-    printf("Waiting for your awesome message..\n");
-    
-    signal(SIGUSR1, ft_signal_handler);
-    signal(SIGUSR2, ft_signal_handler);
-    while(argc == 1)
-    {
-        pause();
-    }
-    return(0);
+	(void)argv;
+	if (argc != 1)
+	{
+		printf("\033[91mWrong format\033[0m, \033[96mtry this : ./server \033[0m\n");
+		return (0);
+	}
+	pid = getpid();
+	printf("\033[96mProcess ID (PID)\033[0m --> \033[91m%d\n\033[0m", pid);
+	printf("\033[90mWaiting for your awesome message..\033[0m\n");
+	while (argc == 1)
+	{
+		signal(SIGUSR1, ft_signal_handler);
+		signal(SIGUSR2, ft_signal_handler);
+		pause();
+	}
+	return (0);
 }

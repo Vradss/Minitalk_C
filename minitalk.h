@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:27:28 by vflorez           #+#    #+#             */
-/*   Updated: 2023/10/23 16:47:18 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/10/30 17:00:39 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 # include "../Printf/ft_printf.h"
 # include <stdio.h>
 
-
 void	get_bits(int pid, char i);
-void    ft_signal_handler(int signal);
-
+void	ft_signal_handler(int signal);
 
 #endif

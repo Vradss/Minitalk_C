@@ -6,7 +6,7 @@
 #    By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 20:16:12 by vflorez           #+#    #+#              #
-#    Updated: 2023/10/25 16:11:07 by vflorez          ###   ########.fr        #
+#    Updated: 2023/10/30 16:10:49 by vflorez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,10 @@
 RED 	= \033[0;91m
 GREEN	= \033[1;92m
 YELLOW	= \033[1;93m
+BLUE	= \033[0;96m
+ORANGE	= \033[0;33m
+GRAY	= \033[0;90m
+
 
 #Main
 NAME_PROJECT = minitalk
@@ -25,7 +29,7 @@ NAME_SERVER = server
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 
-#SRC
+#Sources
 SRC = 	client.c\
 		server.c
 
