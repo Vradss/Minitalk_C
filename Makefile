@@ -6,7 +6,7 @@
 #    By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 20:16:12 by vflorez           #+#    #+#              #
-#    Updated: 2023/10/30 22:22:46 by vflorez          ###   ########.fr        #
+#    Updated: 2023/10/31 13:05:44 by vflorez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ GRAY	= \033[0;90m
 #Main
 NAME_PROJECT = minitalk
 NAME_CLIENT = client
-NAME_SERVER = server 
+NAME_SERVER = server
 
 #Sources
 SRC_DIR = src
@@ -52,11 +52,11 @@ $(NAME_CLIENT) : $(OBJ_CLIENT)
 	@$(MAKE) -C $(LIBFT)
 	@$(MAKE) -C $(PRINTF)
 	@$(CC) $(CFLAGS) $(LINKFLAGS) -o $(NAME_CLIENT) $(OBJ_CLIENT)
-	@echo "$(BLUE) $(NAME_CLIENT)--> Created & compiled 👀$(END)"
+	@echo "$(BLUE) $(NAME_CLIENT) --> Created & compiled 👀$(END)"
 
 $(NAME_SERVER) : $(OBJ_SERVER)
 	@$(CC) $(CFLAGS) $(LINKFLAGS) -o $(NAME_SERVER) $(OBJ_SERVER)
-	@echo "$(BLUE) $(NAME_SERVER)--> Created & compiled 👀$(END)"
+	@echo "$(BLUE) $(NAME_SERVER) --> Created & compiled 👀$(END)"
 
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c | $(OBJ_DIR)
@@ -67,14 +67,16 @@ $(OBJ_DIR):
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(GREEN) All .o files deleted💀💀$(END)"
+	@$(MAKE) clean -C $(LIBFT)
+	@$(MAKE) clean -C $(PRINTF)
+	@echo "$(GREEN) All .o files deleted 💀💀 $(END)"
 
 fclean: clean
 	@$(MAKE) fclean -C $(LIBFT)
 	@$(MAKE) fclean -C $(PRINTF)
 	@rm -f $(NAME_CLIENT)
 	@rm -f $(NAME_SERVER)
-	@echo "$(BLUE) All clean $(END)"
+	@echo "$(BLUE) $(NAME_PROJECT) deleted 💀💀 $(END)"
 
 re: fclean all
 
