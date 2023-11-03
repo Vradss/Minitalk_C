@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:53:31 by vflorez           #+#    #+#             */
-/*   Updated: 2023/10/30 19:11:19 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/10/31 13:27:04 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("\033[91mWrong format.\033[0m\n");
-		printf("\033[96mTry this: ./client <PID> <Message>\033[0m\n");
+		ft_printf("\033[91mWrong format.\033[0m\n");
+		ft_printf("\033[96mTry this: ./client <PID> <Message>\033[0m\n");
 		return (1);
 	}
 	return (0);

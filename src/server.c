@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:54:13 by vflorez           #+#    #+#             */
-/*   Updated: 2023/10/30 19:11:09 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/10/31 13:31:09 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_signal_handler(int signal)
 	bit++;
 	if (bit == 8)
 	{
-		printf("%c", i);
+		ft_printf("%c", i);
 		bit = 0;
 		i = 0;
 	}
@@ -35,12 +35,13 @@ int	main(int argc, char *argv[])
 	(void)argv;
 	if (argc != 1)
 	{
-		printf("\033[91mWrong format\033[0m, \033[96mtry this : ./server \033[0m\n");
+		ft_printf("\033[91mWrong format\033[0m\n");
+		ft_printf("\033[96mtry this : ./server \033[0m\n");
 		return (0);
 	}
 	pid = getpid();
-	printf("\033[96mProcess ID (PID)\033[0m --> \033[91m%d\n\033[0m", pid);
-	printf("\033[90mWaiting for your awesome message..\033[0m\n");
+	ft_printf("\033[96mProcess ID (PID)\033[0m --> \033[91m%d\n\033[0m", pid);
+	ft_printf("\033[90mWaiting for your awesome message..\033[0m\n");
 	while (argc == 1)
 	{
 		signal(SIGUSR1, ft_signal_handler);
